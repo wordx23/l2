@@ -34,8 +34,9 @@ def lowess(x, y, f, iterations):
     iterations = 3
     yest = lowess(x, y, f, iterations)
     import matplotlib.pyplot as plt
+    plt.plot(x,y,"r.")
+    plt.plot(x,yest,"b-")
     
     main()
-  plt.plot(x,y,"r.")
-  plt.plot(x,yest,"b-")
+
     
