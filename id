@@ -1,0 +1,16 @@
+def infoGain(P, N):
+import math
+return -P / (P + N) * math.log2(P / (P + N)) - N / (P + N) * math.log2(N /(P + N))
+
+def insertNode(tree, addTo, Node):
+  for k, v in tree.items():
+    if isinstance(v, dict):
+      tree[k] = insertNode(v, addTo, Node)
+    if addTo in tree:
+      if isinstance(tree[addTo], dict):
+        tree[addTo][Node] = 'None'
+      else:
+        tree[addTo] = {Node: 'None'}
+  return tree
+
+
